@@ -1,29 +1,20 @@
-# Nifi-ELK
+
 
 ![Logo](https://n3m5z7t4.rocketcdn.me/wp-content/plugins/edem-shortcodes/public/img/logo-Edem.png)
 
-# Nifi+ELK Exercise
-
+# Ejercicio Nifi+ELK 
 - Professor :   [Pedro Nieto](https://github.com/a10pepo)
-- Student:      [Javier Briones](https://github.com/jabrio)
+- Student:      [Jordi Oltra](https://github.com/20rd1)
 
-#### Part 01
+### Enunciado
 
 ```
 Usando nifi+ELK, debéis presentar una solución que muestre, sobre un mapa, 
 la disposición de delitos presentes en esta API:
 https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9
 ```
-#### Part 02
 
-```
-Existen otras fuentes de datos que proporcionan también llamadas al 311 de otras zonas, 
-opcionalmente podéis concatenar más datasets y pintarlos de manera conjunta.
-```
-
-## Part 01: Nifi to ELK
-
-##### Step 01: Prepare a Docker-compose file with the following containers
+#### Paso 1: Preparar un docker-compose con estos contenedores: 
 
 | Component | Port |
 | --- | --- | 
@@ -31,14 +22,14 @@ opcionalmente podéis concatenar más datasets y pintarlos de manera conjunta.
 | Elasticsearch | 9200 |
 | Nifi | 8080 |
 
-##### Step 02: In NiFi, use the following processors
+#### Paso 02: In NiFi, use the following processors
 
 ```
 Invokehttp: To ingest vía API.
 SplitJSON: To convert the obtained array in separated documents.
 Putelasticsearchhttp: Data to elasticsearch, indentified by index.
 ```
-<img src="Images/01.png" width="500"/>
+<img src="imagenes/Imagen1.JPG" width="500"/>
 <img src="Images/02.png" width="500"/>
 <img src="Images/03.png" width="500"/>
 

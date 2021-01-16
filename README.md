@@ -23,20 +23,20 @@ https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-
 | Nifi | 8080 |
 
 #### Paso 2: Procesadores en Nifi 
-Invokehttp: Para la ingesta de los datos
-SplitJSON: Para separar todas las listas de datos
-JoltTransformJSON: Para seleccionar los datos que se van a mandar
+Invokehttp: Para la ingesta de los datos/
+SplitJSON: Para separar todas las listas de datos/
+JoltTransformJSON: Para seleccionar los datos que se van a mandar/
 Putelasticsearchhttp: Para mandar los datos a elasticsearch
 
-##### Imagen  del esquema de Nifi
+Imagen  del esquema de Nifi
 <img src="imagenes/Imagen1.JPG" width="500"/>
-##### Configuración Invokehttp: 
+Configuración Invokehttp: 
 <img src="imagenes/Imagen2.JPG" width="500"/>
-##### Configuración SplitJSON:
+Configuración SplitJSON:
 <img src="imagenes/Imagen3.JPG" width="500"/>
-##### Configuración JoltTransformJSON:
+Configuración JoltTransformJSON:
 <img src="imagenes/Imagen4.JPG" width="500"/>
-##### Configuración Putelasticsearchhttp:
+Configuración Putelasticsearchhttp:
 <img src="imagenes/Imagen5.1.JPG" width="500"/>
 <img src="imagenes/Imagen5.2.JPG" width="500"/>
 

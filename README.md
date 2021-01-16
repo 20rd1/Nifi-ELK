@@ -3,8 +3,8 @@
 ![Logo](https://n3m5z7t4.rocketcdn.me/wp-content/plugins/edem-shortcodes/public/img/logo-Edem.png)
 
 # Ejercicio Nifi+ELK 
-- Professor :   [Pedro Nieto](https://github.com/a10pepo)
-- Student:      [Jordi Oltra](https://github.com/20rd1)
+- Profesor :   [Pedro Nieto](https://github.com/a10pepo)
+- Estudiante:      [Jordi Oltra](https://github.com/20rd1)
 
 ### Enunciado
 
@@ -22,43 +22,35 @@ https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-
 | Elasticsearch | 9200 |
 | Nifi | 8080 |
 
-#### Paso 02: In NiFi, use the following processors
+#### Paso 2: Procesadores en Nifi 
+ Invokehttp: Para la ingesta de los datos
+ SplitJSON: Para separar todas las listas de datos
+ JoltTransformJSON: Para seleccionar los datos que se van a mandar
+ Putelasticsearchhttp: Para mandar los datos a elasticsearch
 
-```
-Invokehttp: To ingest vía API.
-SplitJSON: To convert the obtained array in separated documents.
-Putelasticsearchhttp: Data to elasticsearch, indentified by index.
-```
+###### Imagen  del esquema de Nifi
 <img src="imagenes/Imagen1.JPG" width="500"/>
-<img src="Images/02.png" width="500"/>
-<img src="Images/03.png" width="500"/>
+###### Configuración Invokehttp: 
+<img src="imagenes/Imagen2.JPG" width="500"/>
+###### Configuración SplitJSON:
+<img src="imagenes/Imagen3.JPG" width="500"/>
+###### Configuración JoltTransformJSON:
+<img src="imagenes/Imagen4.JPG" width="500"/>
+###### Configuración Putelasticsearchhttp:
+<img src="imagenes/Imagen5.1.JPG" width="500"/>
+<img src="imagenes/Imagen5.2.JPG" width="500"/>
 
-##### Step 03: Run NiFiFlow
 
-<img src="Images/04.png" width="500"/>
+##### Paso 4: Comprobar si se han traido los datos de Nifi y crear una columna de tipo geo_point
 
-##### Step 04: Go to Localhost:5601 and check that index is created
+<img src="imagenes/Imagen6.JPG" width="500"/>
 
-<img src="Images/05.png" width="500"/>
 
-##### Step 05: Create a "Index Pattern" to visualize the data in Kibana. As can be seen, latitude and longitude are not a geo_point type.
+##### Paso 5: Comprobar si prueba3_reindex esta dentro de elasticsearch 
 
-<img src="Images/06.png" width="500"/>
+<img src="imagenes/Imagen7.JPG" width="500"/>
 
-##### Step 06: Go to Kibana console and create a new index through Reindex API
+##### Paso 6:Representar en Kibana los datos de la variable tipo geo_point.
 
-###### Instructions: [Reindex API Elastic](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-reindex.html)
+<img src="imagenes/Imagen8.JPG" width="500"/>
 
-<img src="Images/07.png" width="500"/>
-
-##### Step 07: Now, create again a "Index Pattern" with the new index. Now, check that "location" is geo_point type.
-
-<img src="Images/08_.png" width="500"/>
-
-##### Step 08: Visualize the data.
-
-<img src="Images/09.png" width="500"/>
-
-##### Final dashboard
-
-<img src="Images/13.png" width="500"/>
